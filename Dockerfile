@@ -25,6 +25,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
 
 RUN mkdir -p /opt/config
 
+EXPOSE 6379
+
 VOLUME /opt/redisdb 
 VOLUME /opt/config
 
