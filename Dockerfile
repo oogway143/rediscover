@@ -35,4 +35,4 @@ COPY redis-trib.rb /usr/local/bin/
 COPY dotbashrc /root/.bashrc
 COPY welcome.ascii /etc/
 
-ENTRYPOINT ["/usr/local/bin/redis-server","/opt/config/redis.conf"]
+CMD ["/usr/local/bin/redis-server","/opt/config/redis.conf"]
