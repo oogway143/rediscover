@@ -7,6 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends\
     git\
     libevent-dev\
     stunnel4\
+    net-tools\
     && gem install redis \
     && wget -O redis.tar.gz http://download.redis.io/releases/redis-3.2.0.tar.gz \
     && mkdir -p /usr/src/redis \
@@ -31,3 +32,5 @@ COPY webdis.json stunnel.conf redis.* chain-of-trust.pem /opt/config/
 COPY redis-trib.rb /usr/local/bin/
 COPY dotbashrc /root/.bashrc
 COPY welcome.ascii /etc/
+
+CMD ["/usr/local/bin/redis-server","/opt/config/redis.conf"]
